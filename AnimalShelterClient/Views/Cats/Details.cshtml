@@ -1,0 +1,19 @@
+@{
+  ViewData["Title"] = "Details";
+}
+
+<h1>Info for @Model.Name:</h1>
+<ul>
+  <li>ID Number: @Model.CatId</li>
+  <li>Gender: @Model.Gender</li>
+  <li>Age: @Model.Age</li>
+  <li>Description: @Model.Description</li>
+</ul>
+<br>
+
+<a href="/Cats/Edit/@(Model.CatId)">
+  <p>Edit @Model.Name</p>
+</a>
+<a href="/Cats">
+  <p>Return to All Cats</p>
+</a>

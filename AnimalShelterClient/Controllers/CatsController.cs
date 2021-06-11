@@ -15,6 +15,11 @@ namespace AnimalShelterClient.Controllers
       var allCats = Cat.GetCats();
       return View(allCats);
     }
+    public IActionResult Details(int id)
+    {
+      var cat = Cat.GetDetails(id);
+      return View(cat);
+    }
     public IActionResult Create()
     {
       return View();
