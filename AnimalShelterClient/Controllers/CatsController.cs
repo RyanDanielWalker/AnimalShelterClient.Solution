@@ -15,6 +15,14 @@ namespace AnimalShelterClient.Controllers
       var allCats = Cat.GetCats();
       return View(allCats);
     }
+    public IActionResult Search(string searchString)
+    {
+      var allCats = Cat.GetCats();
+      var results = allCats.Where(s => s.Name.Contains(searchString));
+
+      return View(results.ToList());
+    }
+
     public IActionResult Details(int id)
     {
       var cat = Cat.GetDetails(id);

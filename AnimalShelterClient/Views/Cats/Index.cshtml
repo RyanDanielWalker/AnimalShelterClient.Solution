@@ -1,5 +1,5 @@
 @{
-  ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Cat Home Page";
 }
 
 <h1>All Cats:</h1>
@@ -13,6 +13,6 @@
   @foreach (Cat cat in Model)
   {
     <li>@Html.ActionLink($"{cat.Name}", "Details", new { id = cat.CatId })</li>
-    <br>
+    <hr style="width: 75%;" />
   }
 </ul>
