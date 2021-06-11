@@ -15,5 +15,20 @@ namespace AnimalShelterClient.Controllers
       var allDogs = Dog.GetDogs();
       return View(allDogs);
     }
+    public IActionResult Details(int id)
+    {
+      var dog = Dog.GetDetails(id);
+      return View(dog);
+    }
+    public IActionResult Create()
+    {
+      return View();
+    }
+    [HttpPost]
+    public IActionResult Create(Dog dog)
+    {
+      Dog.Post(dog);
+      return RedirectToAction("Index");
+    }
   }
 }
