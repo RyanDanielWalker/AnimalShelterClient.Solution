@@ -30,9 +30,23 @@ namespace AnimalShelterClient.Models
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      Cat review = JsonConvert.DeserializeObject<Cat>(jsonResponse.ToString());
+      Cat cat = JsonConvert.DeserializeObject<Cat>(jsonResponse.ToString());
 
-      return review;
+      return cat;
+    }
+    public static void Post(Cat cat)
+    {
+      string jsonCat = JsonConvert.SerializeObject(cat);
+      var apiCallTask = ApiHelper.Post(_component, jsonCat);
+    }
+    public static void Put(Cat cat)
+    {
+      string jsonCat = JsonConvert.SerializeObject(cat);
+      var apiCallTask = ApiHelper.Put(_component, cat.CatId, jsonCat);
+    }
+    public static void Delete(int id)
+    {
+      var apiCallTask = ApiHelper.Delete(_component, id);
     }
   }
 }
