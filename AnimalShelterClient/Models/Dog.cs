@@ -12,7 +12,7 @@ namespace AnimalShelterClient.Models
     public int Age { get; set; }
     public string Gender { get; set; }
     public string Description { get; set; }
-    private static string _component = "dog";
+    private static string _component = "dogs";
 
     public static List<Dog> Getdogs()
     {
@@ -33,6 +33,20 @@ namespace AnimalShelterClient.Models
       Dog dog = JsonConvert.DeserializeObject<Dog>(jsonResponse.ToString());
 
       return dog;
+    }
+    public static void Post(Dog dog)
+    {
+      string jsonDog = JsonConvert.SerializeObject(dog);
+      var apiCallTask = ApiHelper.Post(_component, jsonDog);
+    }
+    public static void Put(Dog dog)
+    {
+      string jsonDog = JsonConvert.SerializeObject(dog);
+      var apiCallTask = ApiHelper.Put(_component, dog.DogId, jsonDog);
+    }
+    public static void Delete(int id)
+    {
+      var apiCallTask = ApiHelper.Delete(_component, id);
     }
   }
 }
