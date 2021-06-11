@@ -14,7 +14,7 @@ namespace AnimalShelterClient.Models
     public string Description { get; set; }
     private static string _component = "dogs";
 
-    public static List<Dog> Getdogs()
+    public static List<Dog> GetDogs()
     {
       var apiCallTask = ApiHelper.GetAll(_component);
       var result = apiCallTask.Result;
