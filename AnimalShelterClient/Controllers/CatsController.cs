@@ -31,5 +31,25 @@ namespace AnimalShelterClient.Controllers
       return RedirectToAction("Index");
     }
 
+    public IActionResult Edit(int id)
+    {
+      var cat = Cat.GetDetails(id);
+      return View(cat);
+    }
+
+    [HttpPost]
+    public IActionResult Details(int id, Cat cat)
+    {
+      cat.CatId = id;
+      Cat.Put(cat);
+      return RedirectToAction("Details", id);
+    }
+
+    public IActionResult Delete(int id)
+    {
+      Cat.Delete(id);
+      return RedirectToAction("Index");
+    }
+
   }
 }

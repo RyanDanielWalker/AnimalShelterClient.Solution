@@ -1,0 +1,16 @@
+<h1>Edit Info for @Model.Name:</h1>
+<form action="/Cats/Details/@(Model.CatId)" method="post">
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text" value="@(Model.Name)" required="required">
+  <label for="gender">Gender</label>
+  <input id="gender" name="gender" type="text" value="@(Model.Gender)" required="required">
+  <label for="age">Age</label>
+  <input id="age" name="age" type="number" value="@(Model.Age)" required="required">
+  <label for="description">Description</label>
+  <input id="description" name="description" type="text" value="@(Model.Description)" required="required">
+  <button type="submit">Update!</button>
+</form>
+
+<a href="/Cats/Details/@(Model.CatId)">
+  <p>Return to Details</p>
+</a>
