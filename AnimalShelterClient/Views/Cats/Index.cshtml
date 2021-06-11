@@ -1,0 +1,13 @@
+@{
+  ViewData["Title"] = "Home Page";
+}
+
+<h1>All Cats:</h1>
+
+<ol>
+  @foreach (Cat cat in Model)
+  {
+    <li>@Html.ActionLink($"{cat.Name}", "Details", new { id = cat.CatId })</li>
+    <br>
+  }
+</ol>
