@@ -1,17 +1,13 @@
-<h1>Edit Info for @Model.Name:</h1>
+<h1>Edit Info for @Model.Name</h1>
 <form action="/Dogs/Details/@(Model.DogId)" method="post">
-  <label for="name">Name</label>
+  <label for="name">Name:</label>
   <input id="name" name="name" type="text" value="@(Model.Name)" required="required">
-  <br>
-  <label for="gender">Gender</label>
+  <label for="gender">Gender:</label>
   <input id="gender" name="gender" type="text" value="@(Model.Gender)" required="required">
-  <br>
-  <label for="age">Age</label>
+  <label for="age">Age:</label>
   <input id="age" name="age" type="number" value="@(Model.Age)" required="required">
-  <br>
-  <label for="description">Description</label>
+  <label for="description">Description:</label>
   <input id="description" name="description" type="text" value="@(Model.Description)" required="required">
-  <br>
   <button type="submit">Update!</button>
 </form>
 
